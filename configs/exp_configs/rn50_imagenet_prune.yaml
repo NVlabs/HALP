@@ -1,0 +1,40 @@
+arch: resnet50
+enable_bias: false
+
+dataset_name: imagenet
+data_root: /raid/ImageNet2012/ImageNet2012/
+class_num: 1000
+workers: 5
+batch_size: 128
+optimizer_batch_size: 1024
+
+learning_rate: 1.024
+momentum: 0.875
+nesterov: false
+weight_decay: 3.0517578125e-05
+bn_weight_decay: 0.0
+lr_schedule: cosine
+warmup: 8
+epochs: 90
+
+fp16: false
+amp: true
+opt_level: O1
+static_loss_scale: 128
+dynamic_loss_scale: true
+label_smoothing: 0.1
+mixup: 0.0
+
+ckpt_freq: 30
+
+# pruning
+prune_start_iter: 0
+prune_interval: 40
+prune_steps: 30
+prune_ratio: 0.45
+disable_layer_prune: false
+layer_cfg: configs/prune_configs/rn50_prune_layer.json
+fmap_cfg: configs/prune_configs/rn50_fmap.json
+group_size_cfg: configs/prune_configs/rn50_prune_groups.json
+latency_lut_file: LUT/rn50_titanv_cudnn_batch256.pkl
+lut_bs: 256
