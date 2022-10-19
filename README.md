@@ -1,16 +1,16 @@
 # Structural Pruning via Latency-Saliency Knapsack
 
-This repository is the official PyTorch implementation of NeurIPS 2022 paper [Structural Pruning via Latency-Saliency Knapsack](https://openreview.net/forum?id=cUOR-_VsavA).
+This repository is the official PyTorch implementation of NeurIPS 2022 paper [Structural Pruning via Latency-Saliency Knapsack](https://arxiv.org/pdf/2210.06659.pdf).
 
 Useful links:
-* [project page]()
-* [ArXiv Full]()
+* [project page](https://halp-neurips.github.io/)
+* [ArXiv Full](https://arxiv.org/pdf/2210.06659.pdf)
 * [ArXiv HALP: Hardware-Aware Latency Pruning](https://arxiv.org/abs/2110.10811)
 
-[<img src="assets/pipeline.png">](https://github.com/NVlabs/HALP/blob/master/assets/pipeline.png)
+[<img src="assets/pipeline.png">](assets/pipeline.png)
 
 ## License
-
+Please check the LICENSE file. HALP may be used non-commercially, meaning for research or evaluation purposes only. For business inquiries, please contact researchinquiries@nvidia.com.
 
 ## Requirements
 1. Prepare Environment
