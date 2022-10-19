@@ -70,3 +70,14 @@ python profile.py --model_path model_ckpt/resnet50_halp55_clean.pth --mask_path 
 | ResNet50 | 2.998G | 77.44 | 93.74 | 1213 | [RN50-HALP80](https://drive.google.com/drive/folders/12L9Ar7tBZ3Xz7g1ba3vd483wBxy3qMa4?usp=sharing) |
 |          | 1.957G | 76.47 | 93.11 | 1674 | [RN50-HALP55](https://drive.google.com/drive/folders/13aCyXIsAuOK1wApEJC9k63mHA44JdnRm?usp=sharing) |
 |          | 1.113G | 74.41 | 91.85 | 2610 | [RN50-HALP30](https://drive.google.com/drive/folders/1MdG7tOI5UUIFUqU88Eroz9QNGQIRbbsF?usp=sharing) |
+
+
+## Citation
+```
+@inproceedings{shen2022structural,
+    title={Structural Pruning via Latency-Saliency Knapsack},
+    author={Shen, Maying and Yin, Hongxu and Molchanov, Pavlo and Mao, Lei and Liu, Jianna and Alvarez, Jose},
+    booktitle={Advances in Neural Information Processing Systems},
+    year={2022}
+}
+```
