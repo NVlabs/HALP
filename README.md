@@ -54,9 +54,14 @@ Prune a ResNet50
 python multiproc.py --nproc_per_node 8 main.py --exp configs/exp_configs/rn50_imagenet_prune.yaml --pretrained model_ckpt/resnet50_full.pth
 ```
 
-Evaluate a (prune/unpruned) ResNet50
+Evaluate a pruned ResNet50 before removing the zero weights
 ```
 python multiproc.py --nproc_per_node 8 main.py --pretrained model_ckpt/resnet50_halp55.pth --eval_only
+```
+
+Evaluate a pruned ResNet50 after removing the zero weights
+```
+python multiproc.py --nproc_per_node 8 main.py --pretrained model_ckpt/resnet50_halp55_clean.pth --mask model_ckpt/resnet50_halp55_group_mask.pkl --eval_only
 ```
 
 Measure the actualy latency of a pruned model

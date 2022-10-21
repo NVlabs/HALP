@@ -60,6 +60,10 @@ parser.add_argument(
 parser.add_argument(
     "--no_prune", action="store_true"
 )
+parser.add_argument(
+    "--mask", type=str, default=None,
+    help="The path of the mask file."
+)
 args = parser.parse_args()
 
 
@@ -146,7 +150,9 @@ def main():
         train_writer = SummaryWriter(os.path.join(os.environ["OUTPUT_PATH"], "tf_event"))
 
     ##### Model #####
-    model = get_model(exp_cfg.arch, exp_cfg.class_num, exp_cfg.enable_bias)
+    model = get_model(
+        exp_cfg.arch, exp_cfg.class_num, exp_cfg.enable_bias, group_mask_file=args.mask
+    )
     logger.info(model)
     if args.pretrained is not None:
         resume_ckpt = torch.load(args.pretrained, map_location="cpu")

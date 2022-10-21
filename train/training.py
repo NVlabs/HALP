@@ -91,7 +91,8 @@ def train_loop(
                     data_time.avg, compute_time.avg, ips.avg)
                 )
 
-            pruned_num = pruner.prune_step(global_iter)
+            if pruner is not None:
+                pruned_num = pruner.prune_step(global_iter)
             global_iter += 1
 
             end = time.time()
@@ -177,7 +178,8 @@ def get_train_step(model, criterion, optimizer, fp16, use_amp, pruner=None):
             reduced_loss, prec1, prec5 = torch.zeros(1), torch.zeros(1), torch.zeros(1)
             return reduced_loss, prec1, prec5
 
-        pruner.update_metric(global_step)
+        if pruner is not None:
+            pruner.update_metric(global_step)
 
         if optimizer_step:
             optimizer.step()
